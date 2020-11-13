@@ -1,9 +1,14 @@
-engines:
-  structrue:
-    enabled: false
+plugins:
   duplication:
     enabled: true
     config:
       languages:
+        go:
+        javascript:
         python:
+          # Without this configuration, the duplication analyzer errors
+          # Ref: https://codeclimate.com/changelog/57f7f38e5b814a33cc0011c2/
           python_version: 3
+          # Employ the "Rule Of Three" when it comes to code duplication
+          # Ref: https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)
+          count_threshold: 3
